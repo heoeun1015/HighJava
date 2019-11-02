@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-public class P13_MapTest {
+public class T13_MapTest {
 	public static void main(String[] args) {
 		
 		/* << Map >>
