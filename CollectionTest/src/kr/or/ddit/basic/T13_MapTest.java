@@ -55,6 +55,7 @@ public class T13_MapTest {
 		
 		
 		// 방법2 → Set형의 데이터를 '향상된 for문'으로 처리하면 Iterator를 사용하지 않아도 된다.
+		// Iterable 을 가지고 있다면 향상된 for문을 사용할 수 있다. Map은 가지고 있음.
 		System.out.println("《 향상된 for문을 이용한 방법 》\n");
 		for(String key : keySet) {
 			System.out.println(key + ": " + map.get(key));
@@ -73,6 +74,7 @@ public class T13_MapTest {
 		// 방법4 → Map에는 Entry라는 내부 class가 만들어져 있다.
 		//		   이 Entry는 key와 value라는 멤버변수로 구성되어 있다.
 		//		  Map에서 이 Entry클래스들을 Set형식으로 저장하여 관리한다.
+			// key와 value를 묶어서 관리한다.
 		
 		// Entry객체 전체를 가져오기(가져온 Entry들은 Set형식으로 되어 있다.)
 		// → entrySet()메서드를 이용하여 가져온다.
@@ -90,8 +92,8 @@ public class T13_MapTest {
 			
 			System.out.println("key값: " + entry.getKey());
 			System.out.println("value값: " + entry.getValue());
-			System.out.println("----------------------------------------------");
-		}
+			System.out.println();
+		}System.out.println("──────────────────────────────────────────────");
 		
 		
 		
