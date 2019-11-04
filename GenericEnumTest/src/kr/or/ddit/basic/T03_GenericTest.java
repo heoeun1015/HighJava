@@ -70,7 +70,7 @@ public class T03_GenericTest {
 		
 		Integer irtnNg2 = (Integer)ng2.getVal();
 		System.out.println("정수 반환값 irtnNg2 → " + irtnNg2);
-		System.out.println();
+		System.out.println("───────────────────────────────────────");
 		
 		
 		
@@ -83,7 +83,7 @@ public class T03_GenericTest {
 //		mg1.setVal(100);		// 컴파일 에러
 		mg2.setVal(500);
 		
-		// 캐스티을 따로 해주지 않아도 된다.
+		// 캐스팅을 따로 해주지 않아도 된다.
 		rtnNg1 = mg1.getVal();
 		irtnNg2 = mg2.getVal();
 		
