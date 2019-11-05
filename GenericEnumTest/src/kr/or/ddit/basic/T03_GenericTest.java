@@ -58,7 +58,7 @@ public class T03_GenericTest {
 		
 		NongenericClass ng1 = new NongenericClass();
 		ng1.setVal("가나다라");
-		// ng1.setVal(100); 	// Integer를 넣으면 컴파일 에러 
+		// ng1.setVal(100); 	// Integer를 넣으면 캐스팅 때 컴파일 에러 
 		
 		NongenericClass ng2 = new NongenericClass();
 		ng2.setVal(100);
@@ -87,8 +87,10 @@ public class T03_GenericTest {
 		rtnNg1 = mg1.getVal();
 		irtnNg2 = mg2.getVal();
 		
-		System.out.println("제너릭 문자열 반환값: " + rtnNg1);
-		System.out.println("제너릭 정수형 반환값: " + irtnNg2);
+		System.out.println("제너릭 문자열 반환값(변수): " + rtnNg1);
+		System.out.println("제너릭 문자열 반환값: " + mg1.getVal());
+		System.out.println("제너릭 정수형 반환값(변수): " + irtnNg2);
+		System.out.println("제너릭 정수형 반환값: " + mg2.getVal());
 		
 	}
 }

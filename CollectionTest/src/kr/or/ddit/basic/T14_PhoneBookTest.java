@@ -212,6 +212,7 @@ public class T14_PhoneBookTest {
 				String name = it.next();		// 키값
 				Phone p = phoneBookMap.get(name);
 				System.out.println(" " + cnt + "\t" + p.getName() + "\t" + p.getTel() + "\t" + p.getAddr());
+				System.out.println(p);
 				System.out.println();
 				System.out.println("\t  ▷ 전체 리스트가 출력되었습니다.");
 			}
@@ -297,13 +298,13 @@ class Phone{
 	}
 
 
-//	@Override
-//	public String toString() {
-//		return "Phone [name=" + name + ", tel=" + tel + ", addr=" + addr + "]";
-//	}
-//	
-//	
-//	
+	@Override
+	public String toString() {
+		return "Phone [name=" + name + ", tel=" + tel + ", addr=" + addr + "]";
+	}
+	
+	
+	
 //	
 	
 	

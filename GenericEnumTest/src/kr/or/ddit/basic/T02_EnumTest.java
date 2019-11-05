@@ -1,22 +1,22 @@
 package kr.or.ddit.basic;
-
-/* 열거형 → 상수값들을 선언하는 방법
 	
-	static final in A = 0;
-	static final in B = 1;
-	static final in C = 2;
-	static final in D = 3;
-	
-	enum Data {A, B, C, D};
-	
-<< 열거형 선언하는 방법 >>
-eum 열거형 { 상수값1, 상수값2, ..., 상수값n ); */
+	/* 열거형 → 상수값들을 선언하는 방법
+		
+		static final in A = 0;
+		static final in B = 1;
+		static final in C = 2;
+		static final in D = 3;
+		
+		enum Data {A, B, C, D};
+		
+	<< 열거형 선언하는 방법 >>
+	enum 열거형 { 상수값1, 상수값2, ..., 상수값n ); */
 
 
 public class T02_EnumTest {
 	// City 열거형 객체 선언 (기본값을 이용하는 열거형)
 	public enum City{ 서울, 부산, 대구, 광주, 대전 };	// 여기서 열거하지 않으면 사용할 수 없다.
-	// public enum City2{ "서울", "부산", "대구" };	// 에러난다.
+	// public enum City2{ "서울", "부산", "대구" };	// 에러난다. 열거형은 "" 안에 써주면 안 됨.
 	
 	// 데이터를 임의로 지정한 열거형 객체 선언
 	// 데이터값을 정해줄 경우에는 생성자를 만들어서 괄호 속의 값이 변수에 저장되도록 해야 한다.
@@ -51,7 +51,7 @@ public class T02_EnumTest {
 		/*	열거형에서 사용되는 메서드
 		 	1. name() → 열거형 상수의 이름을 문자열로 반환한다.
 		 	2. ordinal() → 열거형 상수가 정의된 순서값을 반환한다. (0부터 시작함)
-		 	3. valusOf("열거형 상수 이름"); → 지정된 열거형에서 '열거형 상수 이름'과 일치하는 열거형 상수를 반환한다. */
+		 	3. valueOf("열거형 상수 이름"); → 지정된 열거형에서 '열거형 상수 이름'과 일치하는 열거형 상수를 반환한다. */
 		
 		
 		City myCity1;	//열거형 객체변수 선언
