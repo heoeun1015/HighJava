@@ -57,6 +57,7 @@ public class T04_GenericMethodTest {
 		
 		// 구체적타입 명시적으로 지정(생략 가능)
 		boolean result1 = Util.<Integer, String>compare(p1, p2);	// <Integer, String> 생략 가능
+//		boolean result1 = Util.compare(p1, p2);
 		
 		if(result1) {
 			System.out.println("논리(의미)적으로 동일한 객체임");
