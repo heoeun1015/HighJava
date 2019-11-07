@@ -54,19 +54,19 @@ public class T16_HorseRacingTest {
 
 }
 
-
-class Horse{
-	
-	private String horse;
-	private int rank;
-	
-	public Horse(String horse, int rank) {
-		this.horse = horse;
-		this.rank = rank;
-	}
-
-	
-}
+//
+//class Horse{
+//	
+//	private String horse;
+//	private int rank;
+//	
+//	public Horse(String horse, int rank) {
+//		this.horse = horse;
+//		this.rank = rank;
+//	}
+//
+//	
+//}
 
 
 class Stop{
