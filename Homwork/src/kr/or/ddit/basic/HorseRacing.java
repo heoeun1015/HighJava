@@ -109,15 +109,12 @@ class Horse implements Comparable<Horse>{
 	{
 		String str=" ";
 		
-		for(int i=1;i<location;i++)
-		{
+		for(int i=1;i<location;i++){
 			str += "-";
 		}
 		str += ">";
-		if(location<50)
-		{
-			for(int i=location+1;i<=50;i++)
-			{
+		if(location<50){
+			for(int i=location+1;i<=50;i++){
 				str += "-";
 			}
 		}
@@ -144,14 +141,11 @@ class Racing extends Thread
 		boolean locationCheck;
 		int rank = 0;
 		
-		while(true)
-		{
+		while(true){
 			locationCheck=false;
 			
-			for(int i=0;i<HorseRacing.horse.size();i++)
-			{
-				if(HorseRacing.horse.get(i).location < 50)
-				{
+			for(int i=0;i<HorseRacing.horse.size();i++){
+				if(HorseRacing.horse.get(i).location < 50){
 					locationCheck = true;
 				}
 				
@@ -162,24 +156,19 @@ class Racing extends Thread
 			
 			System.out.println();		//간격
 			
-			if(locationCheck)
-			{
-				for(int i=0;i<HorseRacing.horse.size();i++)
-				{
+			if(locationCheck){
+				for(int i=0;i<HorseRacing.horse.size();i++){
 					int tempLocation =
 							HorseRacing.horse.get(i).getLocation()
 							+ ((int)(Math.random()*2)+1);
 					
-					if(tempLocation >= 50)
-					{
+					if(tempLocation >= 50){
 						HorseRacing.horse.get(i).setLocation(50);
-						if(HorseRacing.horse.get(i).getTempLocation()!=50)
-						{	//랭크
+						if(HorseRacing.horse.get(i).getTempLocation()!=50){	//랭크
 							HorseRacing.horse.get(i).setRank(++rank);
 						}
 					}
-					else
-					{
+					else{
 						HorseRacing.horse.get(i).setLocation(tempLocation);
 					}
 					System.out.println(HorseRacing.horse.get(i).location());
@@ -191,8 +180,7 @@ class Racing extends Thread
 					e.printStackTrace();
 				}
 			}
-			else
-			{
+			else{
 				break;
 			}
 		}

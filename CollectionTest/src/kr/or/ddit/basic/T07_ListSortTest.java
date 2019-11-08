@@ -88,7 +88,7 @@ class Member implements Comparable<Member>{		//Comparable를 구현해주어야 
 	private String name;	//이름
 	private String tel;		//전화번호
 	
-	//생성자 Source - Gnerate Constructor using Fields 선택
+	//생성자 Source - Generate Constructor using Fields 선택
 	public Member(int num, String name, String tel) { 
 		super();
 		this.num = num;

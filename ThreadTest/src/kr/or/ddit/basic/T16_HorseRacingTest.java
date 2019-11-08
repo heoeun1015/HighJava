@@ -94,7 +94,7 @@ class HorseRacing extends Thread{
 		for(int i = 1; i <= 50; i++) {
 			
 			try {
-				Thread.sleep((int)(Math.random() * 500 + 1));
+				Thread.sleep((int)(Math.random() * 200 + 1));
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

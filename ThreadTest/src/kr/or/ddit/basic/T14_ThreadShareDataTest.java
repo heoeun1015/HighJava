@@ -91,11 +91,12 @@ class PrintPIThread extends Thread {
 			// 원주율 계산이 완료될 때까지 기다린다.
 			if(sd.isOk) {break;}
 			
-			System.out.println("확인");	// main 메모리에 올려주는 부분
+//			System.out.println("근데 찍히나?");	// main 메모리에 올려주는 부분
 			Thread.yield();				// 이걸 써주면 상대적으로 시간이 적게 걸리는게 맞는데 여기선 확인이 안 된다.
 			// 캐시가 두 개라서, main 메모리에는 올라갔는데 PrintPIThread의 캐시 메모리는 바뀌지 않았다.
 			// 그럴땐 volatile를 써줘서 캐시 메모리가 아니라 main 메모리를 읽게 해야 한다.
 			// 그게 아니면 찍히지 않음. 근데 찍히나? 하면 찍히는데 왜지....
+			// 뭐든간에 main 메모리로 올려주는 부분만 있으면 된다. 그게 println이든 Thread.yield든 상관없음.
 			
 		}
 		System.out.println();

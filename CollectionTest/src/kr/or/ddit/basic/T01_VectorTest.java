@@ -21,11 +21,11 @@ public class T01_VectorTest {
 				//이런걸 래퍼 클래스라고 부른다.(감싸기 때문)
 		
 		System.out.println("현재 크기: " + v1.size());
-		
+		System.out.println("───────────────────────────────────────");
 		
 		
 		//Vector는 addElement()메서드를 이용하여 추가할 수도 있는데, 이 메서드는 기본적으로 add()메서드와 같은 기능을 수행한다.
-			//컬렉션을 상속받은 List의 프레임 워크를 구현해야 하기 때믄에 add를 쓴다. addElement를 써도 동일하다.(원래 가지고 있던 게 addElement)
+			//컬렉션을 상속받은 List의 프레임 워크를 구현해야 하기 때문에 add를 쓴다. addElement를 써도 동일하다.(원래 가지고 있던게 addElement)
 		v1.addElement("ccc");
 		
 		System.out.println("v1 → " + v1.toString());
@@ -43,7 +43,7 @@ public class T01_VectorTest {
 		String temp = (String) v1.set(0, "zzz");
 		System.out.println("set 명령 후 v1 → " + v1);
 		System.out.println("원래의 데이터: " + temp);
-		
+		System.out.println("───────────────────────────────────────");
 		
 		
 		// remove(index) → 벡터의 index 번째 자료를 삭제한다.
@@ -61,6 +61,7 @@ public class T01_VectorTest {
 		System.out.println("삭제된 자료: " + temp);
 		System.out.println("삭제 후: " + v1);
 		System.out.println();
+		System.out.println("───────────────────────────────────────");
 		
 		v1.add(123);
 		v1.remove(true);
@@ -83,7 +84,7 @@ public class T01_VectorTest {
 		int data = (int) v1.get(0);
 		System.out.println("0번째 자료: " + data);
 		System.out.println("0번째 자료: " + v1.get(0));	//toString을 사용자가 안 해도 컴파일러가 자동으로 해준다.
-		System.out.println("--------------------------");
+		System.out.println("───────────────────────────────────────");
 		System.out.println();
 		System.out.println();
 		System.out.println();
@@ -129,11 +130,11 @@ public class T01_VectorTest {
 		
 		System.out.println("삭제되기 전 v2 → " + v2);
 		//removeAll(Collection 객체) → 벡터의 데이터 중에서 'Collection 객체'가 가지고 있는 데이터를 모두 삭제한다.
-		v2.remove(v4);
+		v2.removeAll(v4);
 		//v2가 가지고 있는 v4의 내용을 삭제한다.
 		//같은 내용이 여러개 있으면 전부 삭제한다.
 		System.out.println("삭제된 후 v2 → " + v2);
-		System.out.println("--------------------------");
+		System.out.println("───────────────────────────────────────");
 		
 		v2.clear();
 		
@@ -167,7 +168,7 @@ public class T01_VectorTest {
 		for(String s : v2) {
 			System.out.println(s);
 		}
-		System.out.println("--------------------------");
+		System.out.println("───────────────────────────────────────");
 		
 		//만약 제너릭을 사용하지 않은 Collection을 향상된 for문으로 처리할 경우에는 Object형으로 처리한다.
 		

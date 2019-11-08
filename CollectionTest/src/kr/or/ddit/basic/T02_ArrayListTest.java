@@ -51,7 +51,7 @@ public class T02_ArrayListTest {
 		
 		list1.remove("bbb");
 		System.out.println("bbb 삭제후 : " + list1);
-		System.out.println("===========================");
+		System.out.println("───────────────────────────────────────");
 		
 		
 		// 제네릭을 지정하여 선언할 수 있다.
@@ -65,12 +65,12 @@ public class T02_ArrayListTest {
 		for(int i=0; i<list2.size(); i++){
 			System.out.println(i + " : " + list2.get(i));
 		}
-		System.out.println("---------------------------");
+		System.out.println("───────────────────────────────────────");
 		
 		for(String s : list2){
 			System.out.println(s);
 		}
-		System.out.println("---------------------------");
+		System.out.println("───────────────────────────────────────");
 		
 		
 		// contains(비교객체); → 리스트에 '비교객체'가 있으면 true
@@ -84,7 +84,7 @@ public class T02_ArrayListTest {
 		//					  리스트에 '비교객체'가 없으면 -1을 반환한다.
 		System.out.println("DDD의 index값 : " + list2.indexOf("DDD"));
 		System.out.println("ZZZ의 index값 : " + list2.indexOf("ZZZ"));
-		System.out.println("---------------------------");
+		System.out.println("───────────────────────────────────────");
 		
 		
 		// toArray() → 리스트 안의 데이터들을 배열로 변환하여 반환한다.

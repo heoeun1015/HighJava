@@ -37,8 +37,7 @@ public class T05_StackQueueTest {
 		System.out.println("꺼내온 자료: " + stack.pop());
 //		System.out.println("현재 stack값들: " + stack);	
 		
-		System.out.println("======================================");
-		System.out.println();
+		System.out.println("───────────────────────────────────────");
 		
 		
 		LinkedList<String> queue = new LinkedList<String>();
