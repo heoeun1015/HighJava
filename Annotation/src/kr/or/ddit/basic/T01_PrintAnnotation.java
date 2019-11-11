@@ -1,5 +1,12 @@
 package kr.or.ddit.basic;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+import javax.lang.model.element.Element;
+
 	/*	<< annotation에 대하여 >>
 	 	
 	 	프로그램 소스코드 안에 다른 프로그램을 위한 정보를 미리 약속된 형식으로 포함시킨 것
@@ -27,6 +34,32 @@ package kr.or.ddit.basic;
 
 
 
-public @interface PrintAnnotation {
-
+@Target(ElementType.METHOD)			// annotation이 적용 가능한 대상을 지정함.
+@Retention(RetentionPolicy.RUNTIME)	// 유지되는 기간(SOURCE, CLASS: 기본, RUNTIME)
+									// SOURCE: 자바코드 (클래스 파일을 까보는 순간 사라짐) / CLASS: (클래스 파일 안에도 유지가 됨)
+									// 내가 사용하는 annotation을 RUNTIME, 끝까지 쓰겠다. 
+public @interface T01_PrintAnnotation {
+	
+//	static final int id2 = 100;
+	int id = 100;	//상수 선언 가능. static final int id = 100;
+	
+	String value() default "┃";		// 기본값을 '-'로 지정
+	int count() default 20;		// 기본값을 20으로 지정
+	
+	// 파라미터를 넣을 수 없다. 원래 어노테이션 문법이 그럼.
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -109,9 +109,9 @@ class HorseRacing extends Thread{
 				}else if(j == i) {
 					System.out.print(">");
 				}else if(j == 50) {
-					System.out.print("-");
+					System.out.print("");
 				}else{
-					System.out.print("-");
+					System.out.print("");
 				}
 			}
 			System.out.println();
