@@ -19,7 +19,6 @@ public class T08_StudentTest {
 	public static void main(String[] args) {
 		
 		List<Student> list = new ArrayList<Student>();
-		Student st = new Student(0, null, 0, 0, 0);
 		
 		System.out.println("▷ 학생 리스트 정렬");
 		System.out.println("---------------------------------------------------------------");

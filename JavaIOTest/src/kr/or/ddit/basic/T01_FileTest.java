@@ -4,13 +4,14 @@ import java.io.File;
 
 public class T01_FileTest {
 	public static void main(String[] args) {
+		
 		/*	<< File 객체 만들기 연습 >> 
-	
-	
 	
 		1. new File(String 파일 또는 경로명)
 		 → 디렉토리와 디렉토리 사이 또는 디렉토리와 파일명 사이의 구분 문자는 '\' 를 사용하거나 '/'를 사용할 수 있다.	*/
+		
 		File file = new File("d:\\D_Other\\test.txt");
+//		File file = new File("d://D_Other//test.txt");
 		System.out.println("▷ 파일명: " + file.getName());
 		System.out.println("▷ 파일 여부: " + file.isFile());
 		System.out.println("▷ 디렉토리(폴더)여부 : " + file.isDirectory());

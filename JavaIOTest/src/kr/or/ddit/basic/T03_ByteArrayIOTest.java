@@ -15,6 +15,7 @@ public class T03_ByteArrayIOTest {
 		// 스트림 선언 및 객체 생성
 		ByteArrayInputStream input = null;	// 스트림 선언
 		input = new ByteArrayInputStream(inSrc);	// 객체 생성
+//		ByteArrayInputStream input = input = new ByteArrayInputStream(inSrc); 
 		
 		ByteArrayOutputStream output = new ByteArrayOutputStream();
 		

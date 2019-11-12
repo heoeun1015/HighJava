@@ -36,8 +36,8 @@ import javax.lang.model.element.Element;
 
 @Target(ElementType.METHOD)			// annotation이 적용 가능한 대상을 지정함.
 @Retention(RetentionPolicy.RUNTIME)	// 유지되는 기간(SOURCE, CLASS: 기본, RUNTIME)
-									// SOURCE: 자바코드 (클래스 파일을 까보는 순간 사라짐) / CLASS: (클래스 파일 안에도 유지가 됨)
-									// 내가 사용하는 annotation을 RUNTIME, 끝까지 쓰겠다. 
+										// SOURCE: 자바코드 (클래스 파일을 까보는 순간 사라짐) / CLASS: (클래스 파일 안에도 유지가 됨)
+										// 내가 사용하는 annotation을 RUNTIME, 끝까지 쓰겠다. 
 public @interface T01_PrintAnnotation {
 	
 //	static final int id2 = 100;
