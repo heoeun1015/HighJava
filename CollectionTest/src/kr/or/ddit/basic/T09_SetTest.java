@@ -30,7 +30,7 @@ public class T09_SetTest {
 		
 		System.out.println("Set 데이터: " + hs1);
 		System.out.println();
-		
+		System.out.println("───────────────────────────────────────");
 		
 		
 		// Set은 데이터의 순서가 없고, 중복을 허용하지 않는다.
@@ -45,7 +45,7 @@ public class T09_SetTest {
 		System.out.println("중복될 때: " + isAdd);
 		System.out.println("Set 데이터: " + hs1);
 		System.out.println();
-		
+		System.out.println("───────────────────────────────────────");
 		
 		
 		// Set의 데이터를 수정하려면 수정하는 명령이 따로 없기 때문에 해당 자료를 삭제한 후 새로운 데이터를 추가해주어야 한다.
@@ -62,6 +62,7 @@ public class T09_SetTest {
 		
 		hs1.add("EE");		// EE 자료 추가
 		System.out.println("Set 데이터: " + hs1);
+		System.out.println("───────────────────────────────────────");
 		System.out.println();
 		
 		hs1.clear();		// 전체 자료 삭제
@@ -75,7 +76,7 @@ public class T09_SetTest {
 		// Set은 데이터의 순서가 없기 때문에 List처럼 인덱스로 데이터를 하나씩 불러올 수 없다.
 		// 그래서 데이터를 하나씩 얻기 위해서는 Iterator로 변환해야 한다.
 		
-		// Set 데이터를 Interator로 변환하기 → Set의 iterator() 메서드를 호출하면 된다.
+		// Set 데이터를 Iterator로 변환하기 → Set의 iterator() 메서드를 호출하면 된다.
 		Iterator it = hs1.iterator();	//Iterator: 반복자
 		
 		
@@ -92,7 +93,7 @@ public class T09_SetTest {
 			// next() 메서드 → 포인터를 다음 자료 위치로 이동하고, 이동한 위치의 자료를 반환한다.
 			System.out.println(it.next());
 		}
-		System.out.println("─────────────");
+		System.out.println("───────────────────────────────────────");
 		
 		
 		// 1 ~ 100 사이의 중복되지 않는 정수 5개 만들기

@@ -31,7 +31,7 @@ public class T03_ByteArrayIOTest {
 		
 		
 		
-		// 출력된 스틞값들을 배열로 변환해서 반환하는 메서드
+		// 출력된 스트림값들을 배열로 변환해서 반환하는 메서드
 		outSrc = output.toByteArray();
 		
 		System.out.println("inSrc → " + Arrays.toString(inSrc));

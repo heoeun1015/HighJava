@@ -18,6 +18,9 @@ public class T01_FileTest {
 		System.out.println("───────────────────────────────────");
 		
 		
+		// ■ getName: 파일 이름 가져오기
+		// ■ isFile: 파일 여부
+		// ■ isDirectory: 디렉토리(폴더) 여부
 		File file2 = new File("d:\\D_Other");
 		// File file2 = new file("d:/D_Other/text.txt");
 		System.out.print("▷ " + file2.getName() + "는");
@@ -28,14 +31,15 @@ public class T01_FileTest {
 		}System.out.println("───────────────────────────────────");
 		
 		
-		
+		// ■ length: 파일의 용량
 		// 2. new File(File parent, String child)
 		// → 'parent'디렉토리 안에 있는 'child' 파일 또는 디렉토리를 갖는다.
 		File file3 = new File(file2, "test.txt");
 		System.out.println("▷ " + file3.getName() + "의 용량 크기: " + file3.length() + "bytes");
 		
 		
-		
+		// ■ getAbsolutePath: 절대경로
+		// ■ getAbsolutePath: 절대경로
 		// 3. new File(String parent, String child)
 		File file4 = new File("\\D_Other\\test\\..", "test.txt");		// ..은 이 폴더 아래, 라는 표시
 		System.out.println("▷ 절대 경로: " + file4.getAbsolutePath());

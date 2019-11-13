@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-// 문자 기반의 Bufferd 스트림 사용 예제 
+// 문자 기반의 Buffered 스트림 사용 예제 
 public class T12_BufferedIOTest {
 	public static void main(String[] args) {
 		
