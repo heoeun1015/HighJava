@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
+import kr.or.ddit.util.DBUtil;
+
 /*
 	LPROD 테이블에 새로운 데이터를 추가하기
 	
@@ -28,11 +30,13 @@ public class A_T04_JdbcTest {
 		
 		try {
 			
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			/*Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(
 					"jdbc:oracle:thin:@localhost:1521:xe", 
 					"sem", 
-					"java");
+					"java");*/
+			
+			conn = DBUtil.getConnection();
 						
 			
 			// lprod_id의 최대값을 가져와서 1 증가시키기
@@ -94,9 +98,9 @@ public class A_T04_JdbcTest {
 			}
 			
 			
-		} catch (ClassNotFoundException e) {
+		} /*catch (ClassNotFoundException e) {
 			System.out.println("드라이버 로딩 실패!!");
-		} catch (SQLException e){
+		}*/ catch (SQLException e){
 			e.printStackTrace();
 		} finally {
 			//  사용했던 자원 반납
