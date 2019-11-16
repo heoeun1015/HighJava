@@ -1,10 +1,10 @@
-package kr.or.ddit.basic;
+package test_basic;
 
 import java.util.Arrays;
 
  	// 와일드카드 타입 예제  
  
-public class T07_WildCardTest {
+public class TB2_T07_WildCardTest {
 	
 	
 	/* << 와일드 카드 예제 >>
@@ -19,16 +19,16 @@ public class T07_WildCardTest {
 	public static void registerCourse(Course<?> course) {	// 어떤 코스든 받아들이겠다. 직장인이든 학생이든 뭐든.
 		System.out.println(course.getName() 
 							+ " 수강생: " 
-				            + Arrays.toString(course.getStudents()));
+				            + Arrays.toString(course.getStudent1s()));
 	}
 	
 	/** 학생과정 등록
 	 @param course 학생 */
-	public static void registerCourseStudent(Course<? extends Student> course) {
-		// Student 일 수도 있고, HighStudent일 수도 있다.
+	public static void registerCourseStudent1(Course<? extends Student1> course) {
+		// Student1 일 수도 있고, HighStudent1일 수도 있다.
 		System.out.println(course.getName() 
 				+ " 수강생: " 
-				+ Arrays.toString(course.getStudents()));
+				+ Arrays.toString(course.getStudent1s()));
 	}
 	
 	/** 직장인과정 등록
@@ -36,7 +36,7 @@ public class T07_WildCardTest {
 	public static void registerCourseWorker(Course<? super Worker> course) {	//Worker랑 Person
 		System.out.println(course.getName() 
 				+ " 수강생: " 
-				+ Arrays.toString(course.getStudents()));
+				+ Arrays.toString(course.getStudent1s()));
 	}
 	
 	public static void main(String[] args) {
@@ -44,36 +44,36 @@ public class T07_WildCardTest {
 		Course<Person> personCourse = new Course("일반인과정", 5);
 		personCourse.add(new Person("일반인1"));
 		personCourse.add(new Worker("직장인1"));
-		personCourse.add(new Student("학생1"));
-		personCourse.add(new HighStudent("고등학생1"));
+		personCourse.add(new Student1("학생1"));
+		personCourse.add(new HighStudent1("고등학생1"));
 		
 		Course<Worker> workerCourse = new Course("직장인과정", 5);
 		workerCourse.add(new Worker("직장인1"));
 		
-		Course<Student> studentCourse = new Course("학생과정", 5);
-		studentCourse.add(new Student("학생1"));
-		studentCourse.add(new HighStudent("고등학생1"));
+		Course<Student1> studentCourse = new Course("학생과정", 5);
+		studentCourse.add(new Student1("학생1"));
+		studentCourse.add(new HighStudent1("고등학생1"));
 //		studentCourse.add(new Worker("직장인1"));		//에러.
 		
-		Course<HighStudent> highStudentCourse = new Course("고등학생과정", 5);
-		highStudentCourse.add(new HighStudent("고등학생1"));
+		Course<HighStudent1> highStudent1Course = new Course("고등학생과정", 5);
+		highStudent1Course.add(new HighStudent1("고등학생1"));
 		
 		registerCourse(personCourse);
 		registerCourse(workerCourse);
 		registerCourse(studentCourse);
-		registerCourse(highStudentCourse);
+		registerCourse(highStudent1Course);
 		System.out.println("──────────────────────────────────────────────────────────────");
 		
-//		registerCourseStudent(personCourse);	// 타입 에러
-//		registerCourseStudent(workerCourse);	// 타입 에러
-		registerCourseStudent(studentCourse);
-		registerCourseStudent(highStudentCourse);
+//		registerCourseStudent1(personCourse);	// 타입 에러
+//		registerCourseStudent1(workerCourse);	// 타입 에러
+		registerCourseStudent1(studentCourse);
+		registerCourseStudent1(highStudent1Course);
 		System.out.println("──────────────────────────────────────────────────────────────");
 		
 		registerCourseWorker(personCourse);
 		registerCourseWorker(workerCourse);
 //		registerCourseWorker(studentCourse);
-//		registerCourseWorker(highStudentCourse);
+//		registerCourseWorker(highStudent1Course);
 	}
 }
 
@@ -99,14 +99,14 @@ class Worker extends Person{
 	}
 }
 
-class Student extends Person{
-	public Student(String name) {
+class Student1 extends Person{
+	public Student1(String name) {
 		super(name);
 	}
 }
 
-class HighStudent extends Student{	// extends Student
-	public HighStudent(String name) {
+class HighStudent1 extends Student1{	// extends Student1
+	public HighStudent1(String name) {
 		super(name);
 	}
 }
@@ -125,7 +125,7 @@ class Course<T>{
 	}
 	
 	public String getName() { return name; }
-	public T[] getStudents() { return students; }
+	public T[] getStudent1s() { return students; }
 	public void add(T t) {
 		for(int i=0; i<students.length; i++) {
 			if(students[i] == null) {

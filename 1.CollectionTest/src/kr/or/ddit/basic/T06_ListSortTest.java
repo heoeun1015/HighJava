@@ -1,7 +1,6 @@
 package kr.or.ddit.basic;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -19,7 +18,7 @@ public class T06_ListSortTest {
 	 	   	  Comparator에서는 compare()메서드를 구현해야 한다.		// compare()는 파라미터 2개 (앞이 더 크면 양수, 뒤면 음수, 같으면 0) 
 		 */
 		
-		List list = new ArrayList<String>();
+		List<String> list = new ArrayList<String>();
 		//String을 만들면 안에 Comparable이 구현되어 있기 때문에 정렬이 가능하다.
 		
 		list.add("일지매");
