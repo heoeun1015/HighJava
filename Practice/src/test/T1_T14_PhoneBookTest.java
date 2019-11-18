@@ -40,15 +40,20 @@ public class T1_T14_PhoneBookTest {
 			int menuNum = s.nextInt();   // 메뉴 번호 입력
 			
 			switch(menuNum){
-				case 1 : insert();		// 등록
+				case 1 : 
+//					insert();		// 등록
 					break;
-				case 2 : update();		// 수정
+				case 2 : 
+//					update();		// 수정
 					break;
-				case 3 : delete();		// 삭제
+				case 3 : 
+//					delete();		// 삭제
 					break;
-				case 4 : search();		// 검색
+				case 4 : 
+//					search();		// 검색
 					break;
-				case 5 : displayAll();	// 전체 출력
+				case 5 : 
+//					displayAll();	// 전체 출력
 					break;
 				case 0 :
 					System.out.println("▷ 프로그램을 종료합니다.");

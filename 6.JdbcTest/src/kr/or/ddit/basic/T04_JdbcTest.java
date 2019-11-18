@@ -77,7 +77,7 @@ public class T04_JdbcTest {
 			String input2 = s.nextLine();
 
 			String sql = "INSERT INTO lprod VALUES (?, ?, ?)";
-			pstmt = conn.prepareStatement(sql);
+//			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setInt(1, (cnt + 1));
 			pstmt.setString(2, input);

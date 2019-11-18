@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 import kr.or.ddit.util.DBUtil2;
 	
 	/*
@@ -35,7 +37,7 @@ import kr.or.ddit.util.DBUtil2;
 	);
 	
 	 */
-public class T05_MemberInfoTest {
+public class T05_2_MemberInfoTest {
 
 	private Connection conn;
 	private Statement stmt;
@@ -43,6 +45,15 @@ public class T05_MemberInfoTest {
 	private ResultSet rs;
 
 	private Scanner scan = new Scanner(System.in); 
+	
+	// Log4j를 이용한 로그 남기기
+	
+	// 쿼리 실행 로그
+	private static final Logger sqlLogger = Logger.getLogger("log4jexam.sql.Query");
+	// 파라미터 실행 로그
+	private static final Logger paramLogger = Logger.getLogger("log4jexam.sql.Parameter");
+	// 쿼리가 실행된 결과를 남기기 위한 로그
+	private static final Logger resultLogger = Logger.getLogger(T05_2_MemberInfoTest.class);
 
 	/**
 	 * 메뉴를 출력하는 메서드
@@ -258,7 +269,9 @@ public class T05_MemberInfoTest {
 		try {
 			conn = DBUtil2.getConnection();
 
-			String sql = "INSERT into mymember (mem_id, mem_name, mem_tel, mem_addr) VALUES (?, ?, ?, ?) ";
+			String sql = "INSERT INTO mymember (mem_id, mem_name, mem_tel, mem_addr) VALUES (?, ?, ?, ?) ";
+			
+			sqlLogger.debug("▷ 쿼리: " + sql);
 
 			// 쿼리를 파라미터로 넣어줘야 함.
 			pstmt = conn.prepareStatement(sql);
@@ -266,8 +279,12 @@ public class T05_MemberInfoTest {
 			pstmt.setString(2, memName);
 			pstmt.setString(3, memTel);
 			pstmt.setString(4, memAddr);
+			
+			paramLogger.debug("▷ 파라미터: (" + memId + ", " + memName + ", " + memTel + ", " + memAddr + ")");
 
 			int cnt = pstmt.executeUpdate();
+			
+			resultLogger.debug("▷ 결과: " + cnt);
 
 			if(cnt > 0) {
 				System.out.println();
@@ -326,7 +343,7 @@ public class T05_MemberInfoTest {
 	}
 
 	public static void main(String[] args) {
-		T05_MemberInfoTest memObj = new T05_MemberInfoTest();
+		T05_2_MemberInfoTest memObj = new T05_2_MemberInfoTest();
 		memObj.start();
 	}
 

@@ -93,10 +93,10 @@ public class T02_FileTest {
 				attr = "<DIR>";
 				subDirList.add(i);  // 첨자를 List에 추가. subDirList: 하위 폴더 
 			}else{	// 파일일 때,
-				size = files[i].length() + "";
 				attr = files[i].canRead() ? "R" : " ";
 				attr += files[i].canWrite() ? "W" : " ";	// 읽을 수 있는 파일
 				attr += files[i].isHidden() ? "H" : " ";	// 숨겨진 파일
+				size = files[i].length() + "";
 			}
 			
 			System.out.printf("%s %5s %12s %s\n",
