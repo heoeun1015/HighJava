@@ -1,16 +1,10 @@
-package kr.or.ddit.basic;
+package kr.or.ddit.main;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.List;
 import java.util.Scanner;
 
 import kr.or.ddit.service.NoticeBoardService;
 import kr.or.ddit.service.NoticeBoardServiceImpl;
-import kr.or.ddit.util.DBUtil3;
 import kr.or.ddit.vo.NoticeBoardVO;
 
 /*	위의 테이블을 작성하고 게시판을 관리하는
@@ -196,7 +190,7 @@ public class T07_NoticeBoard {
 		
 		NoticeBoardVO nbo = new NoticeBoardVO();
 		nbo.setBoard_title(boardTitle);
-		nbo.setBoard_title(boardWriter);
+		nbo.setBoard_writer(boardWriter);
 		nbo.setBoard_content(boardContent);
 		nbo.setBoard_no(boardNo);
 		
@@ -233,7 +227,7 @@ public class T07_NoticeBoard {
 		
 		NoticeBoardVO nbo = new NoticeBoardVO();
 		nbo.setBoard_title(title);
-		nbo.setBoard_title(writer);
+		nbo.setBoard_writer(writer);
 		nbo.setBoard_content(content);
 		
 		int cnt = service.insertMember(nbo);

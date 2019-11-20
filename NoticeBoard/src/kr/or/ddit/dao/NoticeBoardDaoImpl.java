@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import kr.or.ddit.util.DBUtil;
 import kr.or.ddit.util.DBUtil3;
 import kr.or.ddit.vo.NoticeBoardVO;
 
@@ -31,12 +30,11 @@ public class NoticeBoardDaoImpl implements NoticeBoardDao {
 	public int insertMember(NoticeBoardVO nbo) {
 		
 		int cnt = 0;
-		
 		try {
 			conn = DBUtil3.getConnection();
 
-			String sql = "INSERT INTO jdbc_board "
-					+ " VALUES (board_seq.NEXTVAL, ?, ?, TO_CHAR(SYSDATE, 'YYYY-MM-DD'), ?) ";
+			String sql = "INSERT INTO jdbc_board (board_no, board_title, board_writer, board_date, board_content)"
+					+ " VALUES (board_seq.NEXTVAL, ?, ?, sysdate, ?) ";
 			
 			// 쿼리를 파라미터로 넣어줘야 함.
 			pstmt = conn.prepareStatement(sql);
@@ -95,7 +93,7 @@ public class NoticeBoardDaoImpl implements NoticeBoardDao {
 		
 		try {
 
-			conn = DBUtil2.getConnection();
+			conn = DBUtil3.getConnection();
 
 			String sql = "SELECT * FROM jdbc_board";
 
@@ -106,10 +104,10 @@ public class NoticeBoardDaoImpl implements NoticeBoardDao {
 				NoticeBoardVO nbo = new NoticeBoardVO();
 				
 				nbo.setBoard_no(rs.getString("board_no"));
-				nbo.setBoard_writer(rs.getString("board_no"));
-				nbo.setBoard_title(rs.getString("board_no"));
-				nbo.setBoard_content(rs.getString("board_no"));
-				nbo.setBoard_date(rs.getString("board_no"));
+				nbo.setBoard_writer(rs.getString("board_writer"));
+				nbo.setBoard_title(rs.getString("board_title"));
+				nbo.setBoard_content(rs.getString("board_content"));
+				nbo.setBoard_date(rs.getString("board_date"));
 				
 				noticeList.add(nbo);
 			}
@@ -190,11 +188,12 @@ public class NoticeBoardDaoImpl implements NoticeBoardDao {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, boardTitle);
 			
-			rs = stmt.executeQuery(sql);
+			rs = pstmt.executeQuery();
 
 			while(rs.next()) {
 				
 				NoticeBoardVO nbo = new NoticeBoardVO();
+				
 				
 				nbo.setBoard_no(rs.getString("board_no"));
 				nbo.setBoard_writer(rs.getString("board_writer"));
