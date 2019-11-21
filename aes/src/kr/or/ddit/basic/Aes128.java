@@ -1,53 +1,110 @@
 package kr.or.ddit.basic;
 
-import java.security.Key;
-import java.util.Base64;
-
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
 public class Aes128 {
-
-	public Key getAESKey() throws Exception {
-	    String iv;
-	    Key keySpec;
-
-	    String key = "1234567890123456";
-	    iv = key.substring(0, 16);
-	    byte[] keyBytes = new byte[16];
-	    byte[] b = key.getBytes("UTF-8");
-
-	    int len = b.length;
-	    if (len > keyBytes.length) {
-	       len = keyBytes.length;
+	
+private static final String key = "key1234567890123"; // 암복호화에 사용할 키 값(16, 24, 32 Byte)" 
+	
+	/**
+	 * 암호화
+	 * @param message
+	 * @return
+	 * @throws Exception
+	 */
+	public static String encrypt(String message) throws Exception{
+		
+	    if(message == null){
+	        return null;
+	    }else{
+	        SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), "AES");
+	         
+	        Cipher cipher = Cipher.getInstance("AES");
+	        cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);
+	         
+	        byte[] encrypted = cipher.doFinal(message.getBytes());
+	         
+	        return byteArrayToHex(encrypted);
 	    }
-
-	    System.arraycopy(b, 0, keyBytes, 0, len);
-	    keySpec = new SecretKeySpec(keyBytes, "AES");
-
-	    return keySpec;
-	}
-
-	// 암호화
-	public String encAES(String str) throws Exception {
-	    Key keySpec = getAESKey();
-	    Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
-	    c.init(Cipher.ENCRYPT_MODE, keySpec);
-	    byte[] encrypted = c.doFinal(str.getBytes("UTF-8"));
-	    String enStr = new String(Base64.encodeBase64(encrypted));
-
-	    return enStr;
-	}
-
-	// 복호화
-	public String decAES(String enStr) throws Exception {
-	    Key keySpec = getAESKey();
-	    Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
-	    c.init(Cipher.DECRYPT_MODE, keySpec);
-	    byte[] byteStr = Base64.decodeBase64(enStr.getBytes("UTF-8"));
-	    String decStr = new String(c.doFinal(byteStr), "UTF-8");
-
-	    return decStr;
 	}
 	
+	
+	
+	/**
+	 * 복호화
+	 * @param encrypted
+	 * @return
+	 * @throws Exception
+	 */
+	public static String decrypt(String encrypted) throws Exception{
+	     
+	    if(encrypted == null){
+	        return null;
+	    }else{
+	        SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), "AES");
+	         
+	        Cipher cipher = Cipher.getInstance("AES");
+	        cipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
+	         
+	        byte[] original = cipher.doFinal(hexToByteArray(encrypted));
+	         
+	        String originalStr = new String(original);
+	         
+	        return originalStr;
+	    }
+	}
+	
+	/**
+	 * Byte배열을 16진수 문자열로 변환
+	 * @param encrypted
+	 * @return
+	 */
+	private static String byteArrayToHex(byte[] encrypted) {
+	     
+	    if(encrypted == null || encrypted.length ==0){
+	        return null;
+	    }
+	     
+	    StringBuffer sb = new StringBuffer(encrypted.length * 2);
+	    String hexNumber;
+	     
+	    for(int x=0; x<encrypted.length; x++){
+	        hexNumber = "0" + Integer.toHexString(0xff & encrypted[x]);
+	        sb.append(hexNumber.substring(hexNumber.length() - 2));
+	    }
+	     
+	    return sb.toString();
+	}
+	
+	
+	/**
+	 * 16진수 문자열을 Byte배열로 변경
+	 * @param hex
+	 * @return
+	 */
+	private static byte[] hexToByteArray(String hex) {
+	     
+	    if(hex == null || hex.length() == 0){
+	        return null;
+	    }
+	     
+	    //16진수 문자열을 byte로 변환
+	    byte[] byteArray = new byte[hex.length() /2 ];
+	     
+	    for(int i=0; i<byteArray.length; i++){
+	        byteArray[i] = (byte) Integer.parseInt(hex.substring(2 * i, 2*i+2), 16);
+	    }
+	    return byteArray;
+	}
+	
+	
+	public static void main(String[] args) throws Exception {
+		String encStr = encrypt("안녕하세요");
+		System.out.println("암호화된 문자열: " + encStr);
+		
+		String decStr = decrypt(encStr);
+		System.out.println("복호화된 문자열: " + decStr);
+	}
+
 }
