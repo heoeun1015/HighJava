@@ -122,7 +122,6 @@ public class T07_NoticeBoard {
 
 
 	private void displayWriteAll() {
-		
 		System.out.println();
 		System.out.println("---------------------------------------------------");
 		System.out.println(" NO.\t글쓴이\t글제목\t내용\t날짜");
@@ -134,7 +133,6 @@ public class T07_NoticeBoard {
 			System.out.println(nbo.getBoard_no() + "\t" + nbo.getBoard_writer()+ "\t" + nbo.getBoard_title() + "\t" +
 		nbo.getBoard_content() + "\t" + nbo.getBoard_date());
 		}
-		
 		System.out.println("---------------------------------------------------");
 		System.out.println("▶ 출력 작업 끝");
 	}

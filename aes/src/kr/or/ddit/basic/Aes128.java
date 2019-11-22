@@ -100,7 +100,7 @@ private static final String key = "key1234567890123"; // 암복호화에 사용�
 	
 	
 	public static void main(String[] args) throws Exception {
-		String encStr = encrypt("안녕하세요");
+		String encStr = encrypt("AES128 암호화키 예제.");
 		System.out.println("암호화된 문자열: " + encStr);
 		
 		String decStr = decrypt(encStr);

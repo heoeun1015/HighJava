@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.or.ddit.util.DBUtil2;
 import kr.or.ddit.util.DBUtil3;
 import kr.or.ddit.vo.NoticeBoardVO;
 
@@ -88,21 +89,16 @@ public class NoticeBoardDaoImpl implements NoticeBoardDao {
 
 	@Override
 	public List<NoticeBoardVO> getAllMemberList() {
-		
 		ArrayList<NoticeBoardVO> noticeList = new ArrayList<NoticeBoardVO>();
 		
 		try {
-
-			conn = DBUtil3.getConnection();
-
+			conn = DBUtil2.getConnection();
 			String sql = "SELECT * FROM jdbc_board";
-
 			stmt = conn.prepareStatement(sql);
 			rs = stmt.executeQuery(sql);
 
 			while(rs.next()) {
 				NoticeBoardVO nbo = new NoticeBoardVO();
-				
 				nbo.setBoard_no(rs.getString("board_no"));
 				nbo.setBoard_writer(rs.getString("board_writer"));
 				nbo.setBoard_title(rs.getString("board_title"));
@@ -111,13 +107,11 @@ public class NoticeBoardDaoImpl implements NoticeBoardDao {
 				
 				noticeList.add(nbo);
 			}
-
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
 			disConnect();
 		}
-		
 		return noticeList;
 	}
 

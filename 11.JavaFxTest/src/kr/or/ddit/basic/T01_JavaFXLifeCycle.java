@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 public class T01_JavaFXLifeCycle extends Application{
 	
-	public T01_JavaFXLifeCycle() {
+	public T01_JavaFXLifeCycle() {		// java Application 쓰레드가 실행해준다.
 		System.out.println(Thread.currentThread().getName() + ": 생성자 호출");
 	}
 	
