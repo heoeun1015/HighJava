@@ -81,7 +81,7 @@ public class T07_NoticeBoard_log4j {
 	
 	public void start(){
 		int choice;
-		do{
+//		do{
 			displayMenu(); //메뉴 출력
 //			choice = scan.nextInt();
 			choice = Integer.parseInt(scan.nextLine()); // 메뉴번호 입력받기
@@ -107,7 +107,7 @@ public class T07_NoticeBoard_log4j {
 			default :
 				System.out.println("▶ 번호를 잘못 입력했습니다. 다시입력하세요");
 			}
-		}while(choice!=6);
+//		}while(choice!=6);
 	}
 
 	
@@ -307,15 +307,16 @@ public class T07_NoticeBoard_log4j {
 		try {
 			conn = DBUtil3.getConnection();
 
-			String sql = "INSERT INTO jdbc_board ";
+			String sql = "INSERT INTO jdbc_board "
+					+ " VALUES (board_seq.NEXTVAL, ?, ?, TO_CHAR(SYSDATE, 'YYYY-MM-DD'), ?) ";
 			
 			sqlLogger.debug("▷ 쿼리: " + sql);
 			
 			// 쿼리를 파라미터로 넣어줘야 함.
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, title);
-			pstmt.setString(2, writer);
-			pstmt.setString(3, content);
+			pstmt.setString(2, title);
+			pstmt.setString(3, writer);
+			pstmt.setString(4, content);
 			
 			paramLogger.debug("▷ 파라미터: (" + title + ", " + writer + ", " + content + ")");
 			
