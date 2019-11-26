@@ -25,13 +25,13 @@ public class T12_RadioButton extends Application{
 		RadioButton rb1 = new RadioButton("HOME");
 
 		rb1.setToggleGroup(group);	// 라디오 버튼을 그룹에 추가
-		rb1.setUserData("HOME");	// 선택했을 대의 값을 나타내기 위한 데이터 설정
+		rb1.setUserData("Home");	// 선택했을 대의 값을 나타내기 위한 데이터 설정
 
 		RadioButton rb2 = new RadioButton("CALENDAR");
 		rb2.setToggleGroup(group);
-		rb2.setUserData("CALENDAR");
+		rb2.setUserData("Calendar");
 		
-		RadioButton rb3 = new RadioButton("Contacts");
+		RadioButton rb3 = new RadioButton("CONTACTS");
 		rb3.setToggleGroup(group);
 		rb3.setUserData("Contacts");
 
@@ -40,17 +40,18 @@ public class T12_RadioButton extends Application{
 		group.selectedToggleProperty().addListener( new ChangeListener<Toggle>() {
 
 			@Override
-			public void changed(ObservableValue<? extends Toggle> observable, 
-					Toggle oldValue, Toggle newValue) {
-				// 선택된 항목(라디오버튼)이 있는지 검사
+			public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
+
+				// 선택된 항목(라디오 버튼)이 있는지 검사
 				if(group.getSelectedToggle().getUserData() != null) {
 					String url = group.getSelectedToggle().getUserData().toString();
-
-					Image img  = new Image(getClass().getResourceAsStream("images/" + url + ".jpg"));
+					
+					Image img = new Image(getClass().getResourceAsStream("images/" + url + ".jpg"));
 					icon.setImage(img);
+					
 				}
-				}
-			});
+			}
+		});
 		
 		rb1.setSelected(true);		// 선택된 상태로 설정하기
 		
