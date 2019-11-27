@@ -51,7 +51,7 @@ public class HorseRaceExam {
 	}
 }
 
-class Horse extends Thread implements Comparable<Horse> {
+class Horse2 extends Thread implements Comparable<Horse> {
 	private String horseName; // 말이름
 	private int horseRank; // 순위
 	private int horsePosi; // 위치

@@ -40,10 +40,10 @@ public class T14_ListViewTest2 extends Application{
 				"green", "gold", "red", "blue", "black", "brown", "blueviolet", "pink", "yellow", "chocolate");
 		
 		// ListView에 값이 선택되었을 때 처리
-		list.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<String>() {
-			
-		});
-		
+//		list.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<String>() {
+//			
+//		});
+//		
 //		list.setCellFactory(
 //				new Callback<ListView<String>, ListCell<String>>() {
 //

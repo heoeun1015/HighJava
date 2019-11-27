@@ -18,7 +18,7 @@ public class MemberIbatisTest {
 	public static void main(String[] args) {
 		
 		// iBatis를 이용하여 DB자료를 처리하는 작업 순서
-		// 1. iBatis의 환경설저파일을 읽어와 실행시킨다.
+		// 1. iBatis의 환경설정 파일을 읽어와 실행시킨다.
 		try {
 			
 			// 1-1. xml 문서 읽어오기
