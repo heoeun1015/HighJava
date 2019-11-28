@@ -61,7 +61,7 @@ class Horse2 extends Thread implements Comparable<Horse> {
 	 * 
 	 * @param horseName 경주말 이름
 	 */
-	public Horse(String horseName) {
+	public Horse2(String horseName) {
 		this.horseName = horseName;
 	}
 

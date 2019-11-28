@@ -43,7 +43,6 @@ public class T16_MenuTest extends Application{
 		
 		Menu webMenu = new Menu("Web");
 		CheckMenuItem htmlMenuItem = new CheckMenuItem("HTML");
-		htmlMenuItem.setSelected(false);
 		
 		CheckMenuItem cssMenuItem = new CheckMenuItem("CSS");
 		htmlMenuItem.setSelected(true);

@@ -47,7 +47,7 @@ public class T17_DialoglTest extends Application{
 					new ExtensionFilter("All Files", "*.*")
 			);
 			
-			// Dialog 창에서 '열기'버튼을 누르면 선택한 파일 저옵가 반환되고 '취소'버튼을 누르면 null이 반환된다.
+			// Dialog 창에서 '열기'버튼을 누르면 선택한 파일 정보가 반환되고 '취소'버튼을 누르면 null이 반환된다.
 			File selectFile = chooser.showOpenDialog(primaryStage);
 			if(selectFile != null) {
 				// 이 영역에서 파일 내용을 읽어오는 작업을 수행한다.
@@ -131,7 +131,7 @@ public class T17_DialoglTest extends Application{
 			dialog.setTitle("사용자 정의 창");
 			
 			// 4. 자식창에 나타날 컨테이너 객체 생성
-			Parent parent = null;
+			Parent parent = null;	// 상위 객체이기 때문에 어떤 컨테이너든 담을 수 있다.
 			try {
 				parent = FXMLLoader.load(getClass().getResource("myDialog.fxml"));
 			}catch(IOException ex) {
@@ -140,7 +140,7 @@ public class T17_DialoglTest extends Application{
 			
 			
 			// 부모창에서 fxml로 만든 자식창의 컨트롤 객체 얻기
-			TextField txtName = (TextField) parent.lookup("#txtName");
+			TextField txtName = (TextField) parent.lookup("#txtName");	// 원하는 동작이 있을 때 지정
 			PasswordField pass = (PasswordField) parent.lookup("#pass");
 			Button btnOk = (Button) parent.lookup("#btnOk");
 			btnOk.setOnAction(evt -> {
