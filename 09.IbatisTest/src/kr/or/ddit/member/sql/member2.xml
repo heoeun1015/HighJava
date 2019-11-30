@@ -32,7 +32,8 @@
 	 
 	 <update id="updateMember" parameterClass="memVO">	<!-- memVO 타입으로 파라미터를 줄 테니 알아서 채워넣으라는 뜻 --> 
 	 
-	 	UPDATE mymember SET mem_name = #mem_name#, mem_tel = #mem_tel#, mem_addr = #mem_addr#
+	 	UPDATE mymember
+	 	SET mem_name = #mem_name#, mem_tel = #mem_tel#, mem_addr = #mem_addr#
 	 	WHERE mem_id = #mem_id#
 	 
 	 </update>

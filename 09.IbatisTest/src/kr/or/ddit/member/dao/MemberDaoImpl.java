@@ -3,11 +3,7 @@ package kr.or.ddit.member.dao;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.charset.Charset;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,8 +12,6 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
 import kr.or.ddit.member.vo.MemberVO;
-import kr.or.ddit.util.DBUtil2;
-import kr.or.ddit.util.DBUtil3;
 
 public class MemberDaoImpl implements IMemberDao {
 	

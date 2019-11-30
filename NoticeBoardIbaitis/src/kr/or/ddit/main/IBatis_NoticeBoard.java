@@ -35,14 +35,14 @@ import kr.or.ddit.vo.NoticeBoardVO;
 		//  시퀀스이름.nextVal		*/
 
 
-public class T07_NoticeBoard {
+public class IBatis_NoticeBoard {
 
 	private NoticeBoardService service;
 
 	private Scanner scan = new Scanner(System.in);
 	
-	public T07_NoticeBoard() {
-		service = new NoticeBoardServiceImpl();
+	public IBatis_NoticeBoard() {
+		service = NoticeBoardServiceImpl.getInstatnce();
 	}
 	
 	public void displayMenu(){
@@ -62,7 +62,7 @@ public class T07_NoticeBoard {
 	
 	public static void main(String[] args) {
 		
-		new T07_NoticeBoard().start();
+		new IBatis_NoticeBoard().start();
 		
 	}
 	
@@ -165,7 +165,7 @@ public class T07_NoticeBoard {
 		boolean chk = true;
 		
 		do {
-			System.out.print("▷ 수정할 글 번호을 입력하세요.: ");
+			System.out.print("▷ 수정할 글 번호를 입력하세요.: ");
 			boardNo = scan.nextLine();
 
 			chk = service.getMember(boardNo);

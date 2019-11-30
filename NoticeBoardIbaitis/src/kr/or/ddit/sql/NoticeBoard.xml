@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성: 아래에서 작성한 SQL을 호출할 때 같이 사용된다. -->
+<sqlMap namespace = "NoticeBoardTest">
+
+	 
+	 <insert id="insertMember" parameterClass="NBVO"> <!-- iBatis는 ?가 뭔지 모른다. 그러므로 #을 써줌. -->
+		
+		INSERT INTO jdbc_board (board_no, board_title, board_writer, board_date, board_content)
+		VALUES (board_seq.NEXTVAL, #board_title#, #board_writer#, sysdate, #board_content#)
+	 
+	 </insert>
+	 
+	 
+	 <update id="modifyMember" parameterClass="NBVO">	<!-- NBVO 타입으로 파라미터를 줄 테니 알아서 채워넣으라는 뜻 --> 
+	 	
+	 	UPDATE jdbc_board SET board_title = #board_title#, board_writer = #board_writer#,
+		board_date = TO_CHAR(SYSDATE, 'YYYY-MM-DD'), board_content = #board_content#
+		WHERE board_no = #board_no# 
+	 
+	 </update>
+	 
+	 
+	 <delete id="deleteMember" parameterClass="String">	<!-- NBVO가 아니다. 사기치지 말 것 -->
+	 	
+	 	DELETE FROM jdbc_board
+	 	WHERE board_title = #board_title#
+	 
+	 </delete>
+	 
+	 <!-- 결과값이 여러개인 경우 -->
+	 <select id="getMemberAll" resultClass="NBVO">	<!-- 어떤 값으로 리턴(반환)해줄지에 대한 구문 -->
+	 	
+	 	SELECT *
+	 	FROM jdbc_board
+	 
+	 </select>
+	 
+	 <!-- 결과값이 1개인 경우 -->
+	 <select id="getMember" parameterClass="String" resultClass="int">	<!-- 어떤 값으로 리턴(반환)해줄지에 대한 구문 -->
+	 	
+	 	<!-- SELECT * FROM jdbc_board
+	 	WHERE board_title = #board_title# -->
+	 	
+	 	SELECT COUNT(*) cnt FROM jdbc_board
+	 	WHERE board_title = #board_title# 
+	 
+	 </select>
+	 
+	 <select id="getSearchMember" parameterClass="NBVO" resultClass="NBVO">
+	 
+	 SELECT * FROM jdbc_board WHERE board_title = ? 
+	 
+	 </select>
+
+</sqlMap>			
+
+
+
+
+
