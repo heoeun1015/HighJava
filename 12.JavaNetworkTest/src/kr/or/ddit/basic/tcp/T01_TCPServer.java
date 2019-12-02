@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class TCPServer {
+public class T01_TCPServer {
 	public static void main(String[] args) throws IOException {
 		
 		// TCP 소켓 통신을 하기 위해 ServerSocket 객체 생성
@@ -29,6 +29,7 @@ public class TCPServer {
 		
 		// OutputStream 객체를 구성하여 전송한다.
 		// 접속한 Socket의 getOutputStream()메서드를 이용하여 구한다.
+			// 모든 데이터는 stream 으로 오고갈 수 있다.
 		OutputStream out = socket.getOutputStream();
 		DataOutputStream dos = new DataOutputStream(out);		// 데이터 타입별로 저장할 때 썼음.
 		dos.writeUTF("어서오세요.");
