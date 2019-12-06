@@ -50,16 +50,14 @@ public class T02_UdpFileSender {
                 Thread.sleep(10); // 패킷전송간의 간격을 주기 위해. 데이터가 너무 많을 수도 있으므로
                 int readBytes = fis.read(buffer, 0, buffer.length);
                 
-                if (readBytes == -1) break;
+                if (readBytes == -1) break;		// 읽은 바이트가 더 이상 없을 때까지
                 
                 dp = new DatagramPacket(buffer, readBytes, serverAdd, port); // 읽어온 파일내용 패킷에 담기
                 ds.send(dp);
                 totalReadBytes += readBytes;	// 몇 바이트 읽었는지 누적
                 
-                System.out.println("In progress: " + totalReadBytes + "/"
-                        + fileSize + " Byte(s) ("
+                System.out.println("In progress: " + totalReadBytes + "/" + fileSize + " Byte(s) ("
                         + (totalReadBytes * 100 / fileSize) + " %)");
-            
             }
             
             double endTime = System.currentTimeMillis();

@@ -1,0 +1,13 @@
+package kr.or.ddit;
+
+public class LeeBera {
+	public static void main(String[] args) {
+		System.out.println("우리 pl님 기죽지 말고 힘내요!");
+		
+		System.out.println("영호 오빠 아까 뭐라 말한 거임?");
+		
+		System.out.println("이제 2교시라니!!!!");
+		
+		System.out.println(" Z z.. ㅇ[    ] ");
+	}
+}

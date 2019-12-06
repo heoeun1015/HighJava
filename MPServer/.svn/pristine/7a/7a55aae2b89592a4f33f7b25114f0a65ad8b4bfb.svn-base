@@ -1,0 +1,10 @@
+package kr.or.ddit;
+
+public class hanwoo {
+
+	public static void main(String[] args) {
+		System.out.println("한우 먹으러 갈 사람?");
+		System.out.println("저요");
+	}
+
+}

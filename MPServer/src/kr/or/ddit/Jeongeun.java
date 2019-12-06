@@ -1,0 +1,10 @@
+package kr.or.ddit;
+
+public class Jeongeun {
+	public static void main(String[] args) {
+		System.out.println("hihi");
+		System.out.println("Hellohello");
+		
+		System.out.println("수정 테스트으");
+	}
+}

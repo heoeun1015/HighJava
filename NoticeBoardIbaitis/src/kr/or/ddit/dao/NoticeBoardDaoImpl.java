@@ -234,37 +234,37 @@ public class NoticeBoardDaoImpl implements NoticeBoardDao {
 		
 		ArrayList<NoticeBoardVO> noticeList = new ArrayList<NoticeBoardVO>();
 		
-		try {
-
-			conn = DBUtil3.getConnection();
-
-			String sql = "SELECT * FROM jdbc_board WHERE board_title = ? ";
-
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, boardTitle);
-			
-			rs = pstmt.executeQuery();
-
-			while(rs.next()) {
-				
-				NoticeBoardVO nbo = new NoticeBoardVO();
-				
-				
-				nbo.setBoard_no(rs.getString("board_no"));
-				nbo.setBoard_writer(rs.getString("board_writer"));
-				nbo.setBoard_title(rs.getString("board_title"));
-				nbo.setBoard_content(rs.getString("board_content"));
-				nbo.setBoard_date(rs.getString("board_date"));
-				
-				noticeList.add(nbo);
-
-			}
-
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}finally {
-			disConnect();
-		}
+//		try {
+//
+//			conn = DBUtil3.getConnection();
+//
+//			String sql = "SELECT * FROM jdbc_board WHERE board_title = ? ";
+//
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setString(1, boardTitle);
+//			
+//			rs = pstmt.executeQuery();
+//
+//			while(rs.next()) {
+//				
+//				NoticeBoardVO nbo = new NoticeBoardVO();
+//				
+//				
+//				nbo.setBoard_no(rs.getString("board_no"));
+//				nbo.setBoard_writer(rs.getString("board_writer"));
+//				nbo.setBoard_title(rs.getString("board_title"));
+//				nbo.setBoard_content(rs.getString("board_content"));
+//				nbo.setBoard_date(rs.getString("board_date"));
+//				
+//				noticeList.add(nbo);
+//
+//			}
+//
+//		}catch(SQLException e) {
+//			e.printStackTrace();
+//		}finally {
+//			disConnect();
+//		}
 		
 		return noticeList;
 	}

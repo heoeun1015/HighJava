@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+	<!-- mapper 파일에서는 sql 종료 구분자 세미콜론을 붙이지 않는다. -->
+  <select id="selectBoard" resultType="map">
+    SELECT *
+    FROM board
+  </select>
+  
+  <select id="selectBoardByUse" resultType="map" parameterType="String">
+  	SELECT *
+  	FROM board
+  	WHERE board_yn = #{board_yn}
+  </select>
+  
+</mapper>

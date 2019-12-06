@@ -17,7 +17,7 @@ public class T02_UdpFileReceiver {
          
         byte[] buffer = new byte[DEFAULT_BUFFER_SIZE];
         int nReadSize = 0;
-        System.out.println("파일 수신 대기중...");
+        System.out.println("▷ 파일 수신 대기중");
           
         
         DatagramSocket ds = new DatagramSocket(port);
@@ -33,11 +33,11 @@ public class T02_UdpFileReceiver {
             dp = new DatagramPacket(buffer, buffer.length);
             ds.receive(dp);
             str = new String(dp.getData()).trim();
-            fileSize = Long.parseLong(str);
+            fileSize = Long.parseLong(str);		// 서버에서 파일 사이즈를 보냈다.
             
             double startTime = System.currentTimeMillis(); 
             
-            while (true) {
+            while (true) {		// outputStream 으로 받는 족족 write 시키고 있음.
                 ds.receive(dp);
                 str = new String(dp.getData()).trim();
                 nReadSize = dp.getLength();
@@ -61,12 +61,12 @@ public class T02_UdpFileReceiver {
             System.out.println("Average transfer speed: " + transferSpeed + " KB/s");
             System.out.println("File transfer completed");
             
-            System.out.println("수신 처리 완료...");
+            System.out.println("▶ 수신 처리 완료");
             fos.close();
             ds.close();
             
         }else{
-            System.out.println("수신 처리 불가!!!");
+            System.out.println("▷ 수신 처리 불가!!!");
             fos.close();
             ds.close();
         }
