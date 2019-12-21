@@ -126,7 +126,7 @@ public class T17_DialoglTest extends Application{
 			dialog.initModality(Modality.APPLICATION_MODAL);
 			
 			// 3. 부모창 지정
-			dialog.initOwner(primaryStage);
+//			dialog.initOwner(primaryStage);
 			
 			dialog.setTitle("사용자 정의 창");
 			

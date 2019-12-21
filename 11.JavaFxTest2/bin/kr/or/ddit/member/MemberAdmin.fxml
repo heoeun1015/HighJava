@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.member.MemberAdminController">
+   <children>
+      <VBox layoutX="99.0" layoutY="8.0" prefHeight="159.0" prefWidth="403.0">
+         <children>
+            <HBox prefHeight="31.0" prefWidth="403.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="회원 ID : " textAlignment="RIGHT" wrappingWidth="70.0">
+                     <HBox.margin>
+                        <Insets left="40.0" top="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="memId" prefHeight="23.0" prefWidth="230.0" promptText="회원 ID">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="31.0" prefWidth="403.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="회원이름 : " textAlignment="RIGHT" wrappingWidth="70.0">
+                     <HBox.margin>
+                        <Insets left="40.0" top="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="memNm" prefHeight="23.0" prefWidth="230.0" promptText="회원 이름">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="31.0" prefWidth="403.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="회원전화 : " textAlignment="RIGHT" wrappingWidth="70.0">
+                     <HBox.margin>
+                        <Insets left="40.0" top="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="memTel" prefHeight="23.0" prefWidth="230.0" promptText="회원 전화">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="31.0" prefWidth="403.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="회원주소 : " textAlignment="RIGHT" wrappingWidth="70.0">
+                     <HBox.margin>
+                        <Insets left="40.0" top="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="memAddr" prefHeight="23.0" prefWidth="230.0" promptText="회원 주소">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="31.0" prefWidth="403.0">
+               <children>
+                  <Button fx:id="memAdd" mnemonicParsing="false" onAction="#btnAdd" text="추 가">
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" top="5.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="7.0" left="18.0" right="18.0" top="7.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="memMdf" mnemonicParsing="false" onAction="#btnMdf" text="수 정">
+                     <padding>
+                        <Insets bottom="7.0" left="18.0" right="18.0" top="7.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="memDel" mnemonicParsing="false" onAction="#btnDel" text="삭 제">
+                     <padding>
+                        <Insets bottom="7.0" left="18.0" right="18.0" top="7.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="memCheck" mnemonicParsing="false" onAction="#btnCheck" text="확 인">
+                     <padding>
+                        <Insets bottom="7.0" left="18.0" right="18.0" top="7.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="memCac" mnemonicParsing="false" onAction="#btnCac" text="취 소">
+                     <padding>
+                        <Insets bottom="7.0" left="18.0" right="18.0" top="7.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TableView fx:id="memTb" layoutX="17.0" layoutY="175.0" prefHeight="361.0" prefWidth="568.0">
+        <columns>
+          <TableColumn fx:id="idTb" prefWidth="95.0" text="회원ID" />
+          <TableColumn fx:id="nameTb" prefWidth="226.0" text="회원이름" />
+            <TableColumn fx:id="telTb" prefWidth="131.0" text="회원전화" />
+            <TableColumn fx:id="addrTb" prefWidth="115.0" text="회원주소" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

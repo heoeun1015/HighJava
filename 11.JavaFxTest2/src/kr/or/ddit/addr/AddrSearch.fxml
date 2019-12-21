@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.addr.AddrSearchController">
+   <children>
+      <HBox prefHeight="40.0" prefWidth="450.0">
+         <children>
+            <ComboBox fx:id="addrCm" prefWidth="100.0">
+               <HBox.margin>
+                  <Insets left="75.0" right="10.0" />
+               </HBox.margin>
+            </ComboBox>
+            <TextField fx:id="addrTxt">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="addrBtn" mnemonicParsing="false" onAction="#Searchbtn" text="검색" />
+         </children>
+         <padding>
+            <Insets top="8.0" />
+         </padding>
+      </HBox>
+      <TableView fx:id="addrTb" layoutY="40.0" prefHeight="395.0" prefWidth="450.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="우편번호" />
+          <TableColumn prefWidth="116.0" text="시도" />
+            <TableColumn prefWidth="108.0" text="구군" />
+            <TableColumn prefWidth="79.0" text="동" />
+            <TableColumn prefWidth="71.0" text="번지" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

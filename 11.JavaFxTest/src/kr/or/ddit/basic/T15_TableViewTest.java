@@ -233,7 +233,7 @@ public class T15_TableViewTest extends Application {
 		
 		Button btnTest1 = new Button("속성 연습 1");
 		btnTest1.setOnAction(e->{
-			// TextField, TextArea등 문자를 입력하는 객체를 ReadOnly롤 설정하는 메서드 → setEditable()
+			// TextField, TextArea등 문자를 입력하는 객체를 ReadOnly를 설정하는 메서드 → setEditable()
 			// 이 메서드에 true를 설정하면 '입력 가능', false를 설정하면 '읽기전용'이 된다.
 			
 				// 수정을 가능하게 할 건지?

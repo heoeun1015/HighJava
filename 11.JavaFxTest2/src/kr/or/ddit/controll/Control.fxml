@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.controll.ControlController">
+   <children>
+      <HBox layoutX="25.0" layoutY="25.0" prefHeight="23.0" prefWidth="436.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="이 름 : " wrappingWidth="43.59375" />
+            <TextField fx:id="nameTxt" />
+         </children>
+      </HBox>
+      <HBox layoutX="25.0" layoutY="59.0" prefHeight="32.0" prefWidth="294.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="성 별 : " wrappingWidth="43.59375" />
+            <RadioButton fx:id="gender1" mnemonicParsing="false" prefHeight="16.0" prefWidth="41.0" text="남" />
+            <RadioButton fx:id="gender2" mnemonicParsing="false" prefHeight="16.0" prefWidth="37.0" text="여" />
+         </children>
+      </HBox>
+      <HBox layoutX="25.0" layoutY="91.0" prefHeight="32.0" prefWidth="522.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="취 미 : " wrappingWidth="43.59375" />
+            <CheckBox fx:id="hobby1" mnemonicParsing="false" prefHeight="16.0" prefWidth="51.0" text="여행" />
+            <CheckBox fx:id="hobby2" mnemonicParsing="false" prefHeight="16.0" prefWidth="51.0" text="등산" />
+            <CheckBox fx:id="hobby3" mnemonicParsing="false" prefHeight="16.0" prefWidth="51.0" text="독서" />
+            <CheckBox fx:id="hobby4" mnemonicParsing="false" prefHeight="16.0" prefWidth="51.0" text="바둑" />
+            <CheckBox fx:id="hobby5" mnemonicParsing="false" prefHeight="16.0" prefWidth="51.0" text="장기" />
+            <CheckBox fx:id="hobby6" mnemonicParsing="false" prefHeight="16.0" prefWidth="51.0" text="게임" />
+            <CheckBox fx:id="hobby7" mnemonicParsing="false" prefHeight="16.0" prefWidth="62.0" text="테니스" />
+            <CheckBox fx:id="hobby8" mnemonicParsing="false" prefHeight="16.0" prefWidth="78.0" text="배드민턴" />
+         </children>
+      </HBox>
+      <VBox layoutX="25.0" layoutY="114.0" prefHeight="262.0" prefWidth="549.0">
+         <children>
+            <Button fx:id="btn" mnemonicParsing="false" onAction="#btn1" text="보 기">
+               <padding>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </padding>
+            </Button>
+            <TextArea fx:id="txtArea" prefHeight="200.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TextArea>
+         </children>
+      </VBox>
+   </children>
+</Pane>

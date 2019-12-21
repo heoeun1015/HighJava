@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:controller="kr.or.ddit.map.MapController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="imgView" fitHeight="500.0" fitWidth="500.0" layoutX="149.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="imgBtn" layoutX="373.0" layoutY="679.0" mnemonicParsing="false" onAction="#imgBtnOn" text="이미지" />
+   </children>
+</Pane>
